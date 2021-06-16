@@ -1,4 +1,4 @@
-import React from 'react';
+import {React} from 'react';
 import '../navBar/navBar.css'
 import { Navbar } from 'react-bootstrap';
 
