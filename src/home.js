@@ -17,24 +17,23 @@ export const Home = () => {
   const titleCard = "Guantes de Portero";
   const infoCard = "Guantes De Golero De Fútbol Para Niño Niña";
 
-  const hanleClick = () => {
-    setContador(contador);
-  };
-
-  const swichtClick = (i) => {
+  const handleClick = (i) => {
+    setContador(contador+1);
+    setContador(contador-1);
     let newResult;
     switch (i) {
       case "+":
-        newResult = Number(sumar) + 1;
+        newResult = contador+1;
         break;
       case "-":
-        newResult = Number(restar) - 1;
+        newResult = contador-1;
         break;
       default:
         break;
     }
     setContador(newResult);
   };
+
   return (
     <div className="homeNav">
       <NavBar logo={logo} inicio={navInicio} home={navHome} />
@@ -43,7 +42,7 @@ export const Home = () => {
         <div>
           <button
             className="btn"
-            onClick={hanleClick}
+            onClick={()=>handleClick()}
             type="button"
             class="btn btn-primary"
           >
@@ -54,7 +53,7 @@ export const Home = () => {
         <div>
           <button
             className="btn"
-            onClick={() => swichtClick("+")}
+            onClick={() => handleClick("+")}
             type="button"
             class="btn btn-primary"
           >
@@ -62,7 +61,7 @@ export const Home = () => {
           </button>
           <button
             className="btn"
-            onClick={() => swichtClick("-")}
+            onClick={() => handleClick("-")}
             type="button"
             class="btn btn-primary"
           >
