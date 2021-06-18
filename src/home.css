@@ -1,16 +1,25 @@
 .homeNav {
   color: rgb(255, 255, 255);
 }
-.div{
+.div {
   text-align: center;
 }
-.texto{
+.texto {
   margin-top: 2%;
   color: rgb(0, 0, 0);
   text-align: center;
 }
+
 .btn {
   margin-top: 2%;
-  width: 40%;
-  height: 40%;
+  width: 5%;
+  height: 15%;
+  margin-right: 5px;
+}
+.cards {
+  margin-top: 2%;
+  margin-right: auto;
+  margin-left: auto;
+  width: 30%;
+  height: auto;
 }
