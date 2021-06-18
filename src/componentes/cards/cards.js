@@ -2,7 +2,7 @@ import { React } from "react";
 import "../cards/cards.css";
 import { Card } from "react-bootstrap";
 
-export const Cards = ({ img, title, info, btn }) => {
+export const Cards = ({ img, title, info }) => {
     return (
         <Card border="primary">
             <Card.Img className="imgCard" src={img} />
