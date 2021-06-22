@@ -1,8 +1,8 @@
 import { React } from "react";
-import "../cards/cards.css";
+import "./Item.css";
 import { Card } from "react-bootstrap";
 
-export const Cards = ({ img, title, info }) => {
+export const Item = ({ img, title, info }) => {
     return (
         <Card border="primary">
             <Card.Img className="imgCard" src={img} />

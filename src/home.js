@@ -1,7 +1,7 @@
 import "./home.css";
 import { React } from "react";
 import { NavBar } from "../src/componentes/navBar/navBar";
-import { Cards } from "../src/componentes/cards/cards";
+import { Item } from "../src/componentes/Item/Item";
 import { ItemListContainer } from "./componentes/itemCointainer/ItemListContainer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../src/assets/logo.gif";
@@ -24,7 +24,7 @@ export const Home = () => {
         <ItemListContainer />
       </div>
       <div className="cards">
-        <Cards img={imgCard} title={titleCard} info={infoCard} />
+        <Item img={imgCard} title={titleCard} info={infoCard} />
       </div>
     </div>
   );

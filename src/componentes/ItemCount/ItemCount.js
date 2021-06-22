@@ -1,8 +1,8 @@
 import { React, useState } from "react";
-import "../item/itemCount.css";
+import "./itemCount.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export const Items = ({ inicial, stock }) => {
+export const ItemCount = ({ inicial, stock }) => {
     const [contador, setContador] = useState(0);
 
     const handleClick = (i) => {
