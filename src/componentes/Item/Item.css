@@ -2,10 +2,11 @@
   color: rgb(0, 0, 0);
 }
 
+.card{
+  margin-top: 5%;
+}
+
 .imgCard {
-  width: 450px;
-  height: 350px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: auto;
+  height: auto;
 }

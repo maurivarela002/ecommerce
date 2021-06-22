@@ -9,9 +9,8 @@ export const ItemList = () => {
     const infoCard = "Guantes De Golero De Fútbol Para Niño Niña";
 
     return (
-       <div>
-           <Item img={imgCard} title={titleCard} info={infoCard} />
-       </div>
+        <div class="container">
+            <Item img={imgCard} title={titleCard} info={infoCard} />
+        </div>
     );
 };
- 
