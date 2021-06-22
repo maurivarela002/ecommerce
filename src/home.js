@@ -1,20 +1,15 @@
 import "./home.css";
 import { React } from "react";
 import { NavBar } from "../src/componentes/navBar/navBar";
-import { Item } from "../src/componentes/Item/Item";
+import { ItemList } from "../src/componentes/ItemList/ItemList";
 import { ItemListContainer } from "./componentes/itemCointainer/ItemListContainer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../src/assets/logo.gif";
-import imgCard from "../src/assets/guantes.jpg";
 
 export const Home = () => {
 
   const navInicio = "Fulbito";
   const navHome = "Home";
-
-  const titleCard = "Guantes de Portero";
-  const infoCard = "Guantes De Golero De Fútbol Para Niño Niña";
-
 
   return (
     <div className="homeNav">
@@ -24,7 +19,7 @@ export const Home = () => {
         <ItemListContainer />
       </div>
       <div className="cards">
-        <Item img={imgCard} title={titleCard} info={infoCard} />
+        <ItemList />
       </div>
     </div>
   );
