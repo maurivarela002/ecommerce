@@ -5,10 +5,10 @@ import { Card } from "react-bootstrap";
 
 export const Item = ({ img, title, info }) => {
   return (
-    <div class="container">
-      <div className="card" class="row">
-        <div class="col-3">
-          <Card border="primary">
+    <div className="container">
+      <div className="card" className="row">
+        <div className="col-3">
+          <Card border="dark">
             <Card.Img className="imgCard" src={img} />
             <Card.Body className="cardData">
               <Card.Title>{title}</Card.Title>
@@ -16,8 +16,8 @@ export const Item = ({ img, title, info }) => {
             </Card.Body>
           </Card>{" "}
         </div>
-        <div class="col-3">
-          <Card border="primary">
+        <div className="col-3">
+          <Card border="dark">
             <Card.Img className="imgCard" src={img} />
             <Card.Body className="cardData">
               <Card.Title>{title}</Card.Title>
@@ -25,8 +25,8 @@ export const Item = ({ img, title, info }) => {
             </Card.Body>
           </Card>{" "}
         </div>
-        <div class="col-3">
-          <Card border="primary">
+        <div className="col-3">
+          <Card border="dark">
             <Card.Img className="imgCard" src={img} />
             <Card.Body className="cardData">
               <Card.Title>{title}</Card.Title>
@@ -34,8 +34,8 @@ export const Item = ({ img, title, info }) => {
             </Card.Body>
           </Card>{" "}
         </div>
-        <div class="col-3">
-          <Card border="primary">
+        <div className="col-3">
+          <Card border="dark">
             <Card.Img className="imgCard" src={img} />
             <Card.Body className="cardData">
               <Card.Title>{title}</Card.Title>
@@ -43,8 +43,8 @@ export const Item = ({ img, title, info }) => {
             </Card.Body>
           </Card>{" "}
         </div>
-        <div class="col-3">
-          <Card border="primary">
+        <div className="col-3">
+          <Card border="dark">
             <Card.Img className="imgCard" src={img} />
             <Card.Body className="cardData">
               <Card.Title>{title}</Card.Title>
@@ -52,8 +52,8 @@ export const Item = ({ img, title, info }) => {
             </Card.Body>
           </Card>{" "}
         </div>
-        <div class="col-3">
-          <Card border="primary">
+        <div className="col-3">
+          <Card border="dark">
             <Card.Img className="imgCard" src={img} />
             <Card.Body className="cardData">
               <Card.Title>{title}</Card.Title>
@@ -61,8 +61,8 @@ export const Item = ({ img, title, info }) => {
             </Card.Body>
           </Card>{" "}
         </div>
-        <div class="col-3">
-          <Card border="primary">
+        <div className="col-3">
+          <Card border="dark">
             <Card.Img className="imgCard" src={img} />
             <Card.Body className="cardData">
               <Card.Title>{title}</Card.Title>
@@ -70,8 +70,8 @@ export const Item = ({ img, title, info }) => {
             </Card.Body>
           </Card>{" "}
         </div>
-        <div class="col-3">
-          <Card border="primary">
+        <div className="col-3">
+          <Card border="dark">
             <Card.Img className="imgCard" src={img} />
             <Card.Body className="cardData">
               <Card.Title>{title}</Card.Title>

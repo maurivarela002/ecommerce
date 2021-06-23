@@ -37,14 +37,14 @@ export const ItemCount = ({ inicial, stock }) => {
                 className="btn"
                 onClick={() => handleClick("-")}
                 type="button"
-                class="btn btn-primary"
+                className="btn btn-dark"
             >
                 -
             </button>
             <button
                 className="btn"
                 type="button"
-                class="btn btn-primary"
+                className="btn btn-dark"
             >
                 {contador}
             </button>
@@ -52,7 +52,7 @@ export const ItemCount = ({ inicial, stock }) => {
                 className="btn"
                 onClick={() => handleClick("+")}
                 type="button"
-                class="btn btn-primary"
+                className="btn btn-dark"
             >
                 +
             </button>
