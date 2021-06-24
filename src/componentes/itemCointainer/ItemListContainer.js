@@ -6,6 +6,7 @@ import { ItemList } from "../ItemList/ItemList";
 export const ItemListContainer = () => {
     const [loading, setLoading] = useState(false);
     const [item, setItem] = useState(null);
+    const [pokemon, setPokemon] = useState([]);
 
     const loadingFunction = async () => {
         return new Promise(async (resolve) => {
@@ -20,7 +21,16 @@ export const ItemListContainer = () => {
 
     useEffect(() => {
         loadingFunction();
-    });
+
+        const getPokemon = async () => {
+            const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
+            const pokemonArray = await response.json();
+            setPokemon(pokemonArray.results);
+            console.log(pokemonArray);
+        }
+        getPokemon();
+    }, []
+    );
 
     const valorInicialItem = 0;
     const stock = 5;
@@ -31,7 +41,7 @@ export const ItemListContainer = () => {
                 <ItemCount inicial={valorInicialItem} stock={stock} />
             </div>
             <div className="divCard">
-                {item}
+                <ItemList arrayPokemons={pokemon} />
             </div>
         </div>
     );

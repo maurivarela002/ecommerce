@@ -3,79 +3,15 @@ import "./Item.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
 
-export const Item = ({ img, title, info }) => {
+export const Item = ({nommbrePokemons, id}) => {
+
   return (
-    <div className="container">
+    <div className="container" >
       <div className="card" className="row">
-        <div className="col-3">
+        <div className="col">
           <Card border="dark">
-            <Card.Img className="imgCard" src={img} />
             <Card.Body className="cardData">
-              <Card.Title>{title}</Card.Title>
-              <Card.Text>{info}</Card.Text>
-            </Card.Body>
-          </Card>{" "}
-        </div>
-        <div className="col-3">
-          <Card border="dark">
-            <Card.Img className="imgCard" src={img} />
-            <Card.Body className="cardData">
-              <Card.Title>{title}</Card.Title>
-              <Card.Text>{info}</Card.Text>
-            </Card.Body>
-          </Card>{" "}
-        </div>
-        <div className="col-3">
-          <Card border="dark">
-            <Card.Img className="imgCard" src={img} />
-            <Card.Body className="cardData">
-              <Card.Title>{title}</Card.Title>
-              <Card.Text>{info}</Card.Text>
-            </Card.Body>
-          </Card>{" "}
-        </div>
-        <div className="col-3">
-          <Card border="dark">
-            <Card.Img className="imgCard" src={img} />
-            <Card.Body className="cardData">
-              <Card.Title>{title}</Card.Title>
-              <Card.Text>{info}</Card.Text>
-            </Card.Body>
-          </Card>{" "}
-        </div>
-        <div className="col-3">
-          <Card border="dark">
-            <Card.Img className="imgCard" src={img} />
-            <Card.Body className="cardData">
-              <Card.Title>{title}</Card.Title>
-              <Card.Text>{info}</Card.Text>
-            </Card.Body>
-          </Card>{" "}
-        </div>
-        <div className="col-3">
-          <Card border="dark">
-            <Card.Img className="imgCard" src={img} />
-            <Card.Body className="cardData">
-              <Card.Title>{title}</Card.Title>
-              <Card.Text>{info}</Card.Text>
-            </Card.Body>
-          </Card>{" "}
-        </div>
-        <div className="col-3">
-          <Card border="dark">
-            <Card.Img className="imgCard" src={img} />
-            <Card.Body className="cardData">
-              <Card.Title>{title}</Card.Title>
-              <Card.Text>{info}</Card.Text>
-            </Card.Body>
-          </Card>{" "}
-        </div>
-        <div className="col-3">
-          <Card border="dark">
-            <Card.Img className="imgCard" src={img} />
-            <Card.Body className="cardData">
-              <Card.Title>{title}</Card.Title>
-              <Card.Text>{info}</Card.Text>
+              <h2>{nommbrePokemons}</h2>
             </Card.Body>
           </Card>{" "}
         </div>

@@ -1,16 +1,13 @@
 import { React } from "react";
 import "./ItemList.css";
 import { Item } from "../Item/Item";
-import imgCard from "../../../src/assets/guantes.jpg";
 
 
-export const ItemList = () => {
-    const titleCard = "Guantes de Portero";
-    const infoCard = "Guantes De Golero De Fútbol Para Niño Niña";
-
+export const ItemList = ({arrayPokemons}) => {
+    console.log(arrayPokemons)
     return (
         <div className="container">
-            <Item img={imgCard} title={titleCard} info={infoCard} />
+        {arrayPokemons.map((pokemonIndividual, i) => <Item nommbrePokemons={pokemonIndividual.name} id={i} />)}
         </div>
     );
 };
