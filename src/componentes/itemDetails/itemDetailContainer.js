@@ -1,17 +1,25 @@
 import { React } from "react";
-import "./itemDetailContainer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
+import { ItemCount } from "../ItemCount/ItemCount";
 
-export const ItemDetailContainer = ({nommbrePokemons, id, detailDesc}) => {
-    return (
-        <div className="container">
-            <Card border="dark">
+export const ItemDetailContainer = ({ nommbrePokemons, descripcion }) => {
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <Card className="cardBody" border="dark">
             <Card.Body className="cardData">
               <h2>{nommbrePokemons}</h2>
-              <p>{detailDesc}</p>
+              <p>{descripcion}</p>
             </Card.Body>
-          </Card>{" "}
+            <div className="count">
+            <ItemCount />
+            </div>
+          </Card>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
+

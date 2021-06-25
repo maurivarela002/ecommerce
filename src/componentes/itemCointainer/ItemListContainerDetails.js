@@ -1,8 +1,8 @@
 import { React, useEffect, useState } from "react";
 import "./ItemListContainer.css";
-import { ItemList } from "../ItemList/ItemList";
+import { ItemListDetails } from "../ItemList/ItemListDetails";
 
-export const ItemListContainer = () => {
+export const ItemListContainerDetails = () => {
     const [pokemon, setPokemon] = useState([]);
 
     useEffect(() => {
@@ -15,11 +15,11 @@ export const ItemListContainer = () => {
         getPokemon();
     }, []
     );
-    const desc = "descripcion asdasdasdasda"
+    const desc = "Pokémon es una franquicia de medios que originalmente comenzó como un videojuego RPG, pero debido a su popularidad ha logrado expandirse a otros medios de entretenimiento como series de televisión, películas, juegos de cartas, ropa, entre otros, convirtiéndose en una marca que es reconocida en el mercado mundial. "
     return (
         <div>
             <div className="divCard">
-                <ItemList arrayPokemons={pokemon}/>
+                <ItemListDetails arrayPokemons={pokemon} descripcion={desc} />
             </div>
         </div>
     );
