@@ -2,12 +2,12 @@ import { React, useState } from "react";
 import "./itemCount.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export const ItemCount = ({ inicial, stock }) => {
+export const ItemCount = () => {
     const [contador, setContador] = useState(0);
 
     const handleClick = (i) => {
-        const itemInicial = inicial;
-        const limiteStock = stock;
+        const itemInicial = 0;
+        const limiteStock = 5;
 
         setContador(contador);
         let newResult = itemInicial;
@@ -33,30 +33,21 @@ export const ItemCount = ({ inicial, stock }) => {
 
     return (
         <div>
-            <button
-                className="btn"
-                onClick={() => handleClick("-")}
-                type="button"
-                className="btn btn-dark"
-            >
-                -
-            </button>
-            <button
-                className="btn"
-                type="button"
-                className="btn btn-dark"
-            >
-                {contador}
-            </button>
-            <button
-                className="btn"
-                onClick={() => handleClick("+")}
-                type="button"
-                className="btn btn-dark"
-            >
-                +
-            </button>
+            <div className="btn">
+                <button onClick={() => handleClick("-")} type="button" className="btn-dark">
+                    -
+                </button>
+            </div>
+            <div className="btn">
+                <button type="button" className="btn-dark">
+                    {contador}
+                </button>
+            </div>
+            <div className="btn">
+                <button onClick={() => handleClick("+")} type="button" className="btn-dark">
+                    +
+                </button>
+            </div>
         </div>
-
     );
 };

@@ -2,18 +2,21 @@ import { React } from "react";
 import "./Item.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
+import { ItemCount } from "../ItemCount/ItemCount";
 
-export const Item = ({nommbrePokemons, id}) => {
-
+export const Item = ({ nommbrePokemons }) => {
   return (
-    <div className="container" >
-      <div className="card" className="row">
+    <div className="container">
+      <div className="row">
         <div className="col">
-          <Card border="dark">
+          <Card className="cardBody" border="dark">
             <Card.Body className="cardData">
               <h2>{nommbrePokemons}</h2>
             </Card.Body>
-          </Card>{" "}
+            <div className="count">
+            <ItemCount />
+            </div>
+          </Card>
         </div>
       </div>
     </div>
