@@ -7,19 +7,19 @@ export const ItemListContainer = () => {
 
     useEffect(() => {
         const getPokemon = async () => {
-            const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
+            const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
             const pokemonArray = await response.json();
             setPokemon(pokemonArray.results);
             console.log(pokemonArray);
-        }
+        };
         getPokemon();
-    }, []
-    );
-    const desc = "descripcion asdasdasdasda"
+    }, []);
     return (
-        <div>
-            <div className="divCard">
-                <ItemList arrayPokemons={pokemon}/>
+        <div className="row">
+            <div className="col">
+                <div className="divCard">
+                    <ItemList arrayPokemons={pokemon} />
+                </div>
             </div>
         </div>
     );
