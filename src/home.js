@@ -2,8 +2,7 @@ import "./home.css";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import { React } from "react";
 import { ItemListContainer } from "./componentes/ItemListContainer/ItemListContainer";
@@ -13,28 +12,27 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../src/assets/logo.gif";
 
 export const Home = () => {
-
   const navCarritoP = "Productos";
   const navCarritoI = "Items";
 
   return (
     <div className="homeNav">
-    <NavBar logo={logo} productos={navCarritoP} Items={navCarritoI} />
-    <Router>
-      <Switch>
-          <Route path="/">
-          <ItemListContainer />
-          </Route>
-        </Switch>
-
+      <NavBar logo={logo} productos={navCarritoP} Items={navCarritoI} />
+      <Router>
         <Switch>
-          <Route path="/category/:id">
+          <Route path="/">
             <ItemListContainer />
           </Route>
         </Switch>
 
         <Switch>
-          <Route path="/item/:id">
+          <Route path='/category/:id'>
+            <ItemListContainer />
+          </Route>
+        </Switch>
+
+        <Switch>
+          <Route path='/item/:id'>
             <ItemDetailContainer />
           </Route>
         </Switch>
