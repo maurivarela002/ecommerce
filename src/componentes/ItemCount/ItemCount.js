@@ -31,23 +31,19 @@ export const ItemCount = () => {
         }
     };
 
+
     return (
         <div>
             <div className="btn">
-                <button onClick={() => handleClick("-")} type="button" className="btn-dark">
-                    -
+                <button onClick={() => handleClick("-")} type="button" class="btn btn-dark">
+                    Quit to Cart
                 </button>
             </div>
+            {contador}
             <div className="btn">
-                <button type="button" className="btn-dark">
-                    {contador}
-                </button>
-            </div>
-            <div className="btn">
-                <button onClick={() => handleClick("+")} type="button" className="btn-dark">
-                    +
-                </button>
+                <button onClick={() => handleClick("+")} type="button" class="btn btn-dark">Add to Cart</button>
             </div>
         </div>
     );
 };
+export default ItemCount

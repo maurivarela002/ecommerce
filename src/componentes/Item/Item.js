@@ -2,7 +2,6 @@ import { React } from "react";
 import "./Item.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
-import { ItemCount } from "../ItemCount/ItemCount";
 import { ItemDetailContainer } from "../ItemDetailContainer/itemDetailContainer"
 
 export const Item = ({ nommbrePokemons }) => {
@@ -16,7 +15,6 @@ export const Item = ({ nommbrePokemons }) => {
             </Card.Body>
             <ItemDetailContainer />
             <div className="count">
-            <ItemCount />
             </div>
           </Card>
         </div>
