@@ -6,11 +6,10 @@ import {
   Link
 } from "react-router-dom";
 import '../navBar/navBar.css'
-import { ItemListContainer } from "../ItemListContainer/ItemListContainer";
 import fotoCart from "../../assets/carrito.png";
 import { Navbar } from 'react-bootstrap';
 
-export const NavBar = ({ logo, productos }) => {
+export const NavBar = ({ logo, productos,Items }) => {
   return (
     <div className="navbar-header">
     <Router>
@@ -19,23 +18,15 @@ export const NavBar = ({ logo, productos }) => {
             <img className="img" src={logo} alt="Logo" />
           </Link>
           <Navbar.Brand >
-            <Link className="productos" to="/productos">{productos}</Link>
+            <Link className="productos" to="/category/:id">{productos}</Link>
+          </Navbar.Brand>
+          <Navbar.Brand >
+            <Link className="productos" to="/category/:id">{Items}</Link>
           </Navbar.Brand>
           <div className="ml-auto">
           <img className="cartImg" src={fotoCart} alt="fotoCart" />
           </div>
         </Navbar>
-        <Switch>
-          <Route path="/">
-          <ItemListContainer />
-          </Route>
-        </Switch>
-
-        <Switch>
-          <Route path="/productos">
-            <ItemListContainer />
-          </Route>
-        </Switch>
     </Router>
     </div>
   )
