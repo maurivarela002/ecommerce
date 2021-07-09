@@ -5,23 +5,27 @@ import { Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ItemCount from "../ItemCount/ItemCount"
 
-export const ItemDetail = ({foto,title,descripcion}) => {
-    const [cart, setCart] = useState(<ItemCount />);
+export const ItemDetail = ({ nombreProductos, fotoProductos, precioProductos }) => {
+  const [cart, setCart] = useState(<ItemCount />);
 
-    const handleItemCount = () => {
-        setCart(false)
-        console.log(cart)
-    }
+  const handleItemCount = () => {
+    setCart(false)
+    console.log(cart)
+  }
 
   return (
-    <div>
-         <Card.Body className="cardData">
-              <img className="imgCard" src={foto} ></img>
-              <h4>{title}</h4>
-              <p>{descripcion}</p>
-              <ItemCount />
-            </Card.Body>
-    </div>
+    <div className="containerCard">
+    <Card className="cardBody" border="dark">
+      <Card.Body className="cardData">
+        <h2>{nombreProductos}</h2>
+        <p>{precioProductos}</p>
+        <img className="imgProducto" src={fotoProductos} />
+      </Card.Body>
+      <div className="ItemCount">
+      <ItemCount />
+      </div>
+    </Card>
+      </div>
   );
 };
 

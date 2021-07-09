@@ -4,10 +4,10 @@ import "./ItemList.css";
 import { Item } from "../Item/Item";
 
 
-export const ItemList = ({ arrayPokemons }) => {
+export const ItemList = ({ productos }) => {
     return (
         <div>
-        {arrayPokemons.map((pokemonIndividual, i) => <Item nommbrePokemons={pokemonIndividual.name} id={i} />)}
+        {productos.map((productosIndividual) => <Item nombreProductos={productosIndividual.Nombre} fotoProductos={productosIndividual.foto} categoriaProductos={productosIndividual.categoriaId} id={productosIndividual.id} />)}
         </div>
     );
 };

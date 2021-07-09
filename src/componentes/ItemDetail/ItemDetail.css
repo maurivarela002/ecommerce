@@ -1,3 +1,27 @@
-.imgCard{
-    width: 100%;
+.containerCard {
+  margin-top: 2%;
+}
+
+.cardBody {
+  width: 40%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardData {
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.imgProducto {
+  width: 30%;
+}
+
+.count {
+  margin-left: auto;
+  margin-right: auto;
+}
+.ItemCount {
+
 }

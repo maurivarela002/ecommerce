@@ -1,26 +1,26 @@
 import { React, useEffect, useState } from "react";
 import "./ItemListContainer.css";
 import { ItemList } from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
+import DATA from "../../DATA/data.json"
+import dataBasefb from "../../Firebase/firebaseConfig"
 
 export const ItemListContainer = () => {
-    const [pokemon, setPokemon] = useState([]);
+    const [productos, setProductos] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const { id } = useParams()
 
     useEffect(() => {
-        const getPokemon = async () => {
-            const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
-            const pokemonArray = await response.json();
-            setPokemon(pokemonArray.results);
-            console.log(pokemonArray);
-        };
-        getPokemon();
-    }, []);
+        const getProductos = () => {
+            return id ? DATA.filter((productosItems) => productosItems.categoriaId === id) : DATA
+        }
+
+        const productosI = getProductos();
+        setProductos(productosI)
+    }, [id]);
     return (
-        <div className="row">
-            <div className="col">
-                <div className="divCard">
-                    <ItemList arrayPokemons={pokemon} />
-                </div>
-            </div>
+        <div className="divCard">
+            <ItemList productos={productos} />
         </div>
     );
 };

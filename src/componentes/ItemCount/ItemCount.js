@@ -33,15 +33,19 @@ export const ItemCount = () => {
 
 
     return (
-        <div>
+        <div className="containerItemCount">
+            <div className="btn">
+                <button onClick={() => handleClick("+")} type="button" class="btn btn-dark">Add to Cart</button>
+            </div>
+            
+            <div className="inputContador">
+                {contador}
+            </div>
+
             <div className="btn">
                 <button onClick={() => handleClick("-")} type="button" class="btn btn-dark">
                     Quit to Cart
                 </button>
-            </div>
-            {contador}
-            <div className="btn">
-                <button onClick={() => handleClick("+")} type="button" class="btn btn-dark">Add to Cart</button>
             </div>
         </div>
     );

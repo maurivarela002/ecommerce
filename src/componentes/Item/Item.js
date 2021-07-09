@@ -2,23 +2,21 @@ import { React } from "react";
 import "./Item.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
-import { ItemDetailContainer } from "../ItemDetailContainer/itemDetailContainer"
+import {
+  Link
+} from "react-router-dom";
 
-export const Item = ({ nommbrePokemons }) => {
+export const Item = ({ nombreProductos, fotoProductos, categoriaProductos }) => {
   return (
-    <div>
-      <div className="row">
-        <div className="col">
-          <Card className="cardBody" border="dark">
+    <div className="col-4 containerCard">
+        <Card className="cardBody" border="dark">
+          <Link to={`/item/${categoriaProductos}`}>
             <Card.Body className="cardData">
-              <h2>{nommbrePokemons}</h2>
+              <h2>{nombreProductos}</h2>
+              <img className="imgProducto" src={fotoProductos} />
             </Card.Body>
-            <ItemDetailContainer />
-            <div className="count">
-            </div>
-          </Card>
-        </div>
-      </div>
+          </Link>
+        </Card>
     </div>
   );
 };

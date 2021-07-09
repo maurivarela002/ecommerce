@@ -12,27 +12,25 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../src/assets/logo.gif";
 
 export const Home = () => {
-  const navCarritoP = "Productos";
-  const navCarritoI = "Items";
+  const navCarrito1 = "Guantes";
+  const navCarrito2 = "Botines";
+  const navCarrito3 = "Camisetas";
+
 
   return (
     <div className="homeNav">
-      <NavBar logo={logo} productos={navCarritoP} Items={navCarritoI} />
+      <NavBar logo={logo} Guantes={navCarrito1} Botines={navCarrito2} Camisetas={navCarrito3} />
       <Router>
         <Switch>
           <Route path="/">
             <ItemListContainer />
           </Route>
-        </Switch>
 
-        <Switch>
-          <Route path='/category/:id'>
+          <Route exact path='/category/:id'>
             <ItemListContainer />
           </Route>
-        </Switch>
 
-        <Switch>
-          <Route path='/item/:id'>
+          <Route exact path='/item/:id'>
             <ItemDetailContainer />
           </Route>
         </Switch>
