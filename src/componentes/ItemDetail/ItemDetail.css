@@ -1,27 +1,27 @@
 .containerCard {
-  margin-top: 2%;
+  margin: 2% 2% 2% 2%;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 .cardBody {
-  width: 40%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
+  width: 80vh;
 }
 
 .cardData {
   color: rgb(0, 0, 0);
-  text-align: center;
+  float: center;
+  font-size: 2.5vh;
 }
 
 .imgProducto {
-  width: 30%;
+  width: 30vh;
+  float: center;
 }
 
 .count {
-  margin-left: auto;
-  margin-right: auto;
+  float: center;
 }
 .ItemCount {
-
+  float: center;
 }

@@ -4,10 +4,11 @@ import "./ItemList.css";
 import { Item } from "../Item/Item";
 
 
-export const ItemList = ({ productos }) => {
+export const ItemList = ({ productos, id }) => {
+    console.log(productos)
     return (
         <div>
-        {productos.map((productosIndividual) => <Item nombreProductos={productosIndividual.Nombre} fotoProductos={productosIndividual.foto} categoriaProductos={productosIndividual.categoriaId} id={productosIndividual.id} />)}
+        {productos.map((productosIndividual) => !id || id === productosIndividual.categoriaId ? <Item categoriaProductos={productosIndividual.categoriaId} idProdItem={productosIndividual.id} nombreProductos={productosIndividual.Nombre} fotoProductos={productosIndividual.foto} /> : <div />)}
         </div>
     );
 };

@@ -19,19 +19,19 @@ export const Home = () => {
 
   return (
     <div className="homeNav">
-      <NavBar logo={logo} Guantes={navCarrito1} Botines={navCarrito2} Camisetas={navCarrito3} />
       <Router>
+      <NavBar logo={logo} Guantes={navCarrito1} Botines={navCarrito2} Camisetas={navCarrito3} />
         <Switch>
-          <Route path="/">
-            <ItemListContainer />
-          </Route>
-
           <Route exact path='/category/:id'>
             <ItemListContainer />
           </Route>
 
           <Route exact path='/item/:id'>
             <ItemDetailContainer />
+          </Route>
+
+          <Route path="/">
+            <ItemListContainer />
           </Route>
         </Switch>
       </Router>

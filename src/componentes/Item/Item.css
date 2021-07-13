@@ -3,7 +3,7 @@
 }
 
 .cardBody {
-  width: 90%;
+  width: auto;
 }
 
 .cardData {
@@ -12,10 +12,4 @@
 }
 
 .imgProducto{
-  width: 30%;
-}
-
-.count {
-  margin-left: auto;
-  margin-right: auto;
 }

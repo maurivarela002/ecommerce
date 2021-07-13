@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import "./itemDetailContainer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ItemDetail } from "../ItemDetail/ItemDetail"
-import DATA from "../../DATA/data.json"
+import { dataBasefb } from "../../Firebase/firebaseConfig"
 
 
 export const ItemDetailContainer = () => {
@@ -13,17 +13,28 @@ export const ItemDetailContainer = () => {
 
 
   useEffect(() => {
-    const getProductosDetail = () => {
-      return id ? DATA.filter((productosItemsDetail) => productosItemsDetail.categoriaId === id) : DATA
+    const getProductos = () => {
+        const itemCollection = dataBasefb.collection("Productos");
+        console.log(itemCollection)
+        itemCollection.get().then((querySnapshot) => {
+            if (querySnapshot.size === 0) {
+                console.log("No se encontraron Productos de Fulbito");
+            }
+            const todosProductos = querySnapshot.docs.map(doc => doc.data())
+            console.log(todosProductos)
+            setproductosD(todosProductos);
+        }).catch((err) => {
+            console.log(err);
+        }).finally(() => {
+        })
     }
 
-    const productosDetails = getProductosDetail();
-    setproductosD(productosDetails)
-  }, [id]);
+    getProductos();
+}, [id]);
 
   return (
     <div>
-      {productosD.map((productosDetalle) => <ItemDetail nombreProductos={productosDetalle.Nombre} fotoProductos={productosDetalle.foto} precioProductos={productosDetalle.precio} id={productosDetalle.id} />)}
+     {productosD.map((productosIndividual) => id === productosIndividual.id ? <ItemDetail precioProductos={productosIndividual.precio} nombreProductos={productosIndividual.Nombre} fotoProductos={productosIndividual.foto} idProdItem={productosIndividual.id} /> : <div />)}
     </div>
   );
 };

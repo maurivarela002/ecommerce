@@ -6,11 +6,11 @@ import {
   Link
 } from "react-router-dom";
 
-export const Item = ({ nombreProductos, fotoProductos, categoriaProductos }) => {
+export const Item = ({ nombreProductos, fotoProductos, idProdItem }) => {
   return (
-    <div className="col-4 containerCard">
-        <Card className="cardBody" border="dark">
-          <Link to={`/item/${categoriaProductos}`}>
+    <div className="col-6 containerCard">
+        <Card className="" border="dark">
+          <Link to={`/item/${idProdItem}`}>
             <Card.Body className="cardData">
               <h2>{nombreProductos}</h2>
               <img className="imgProducto" src={fotoProductos} />
