@@ -8,6 +8,8 @@ import { React } from "react";
 import { ItemListContainer } from "./componentes/ItemListContainer/ItemListContainer";
 import { ItemDetailContainer } from "./componentes/ItemDetailContainer/itemDetailContainer";
 import { NavBar } from "../src/componentes/navBar/navBar";
+import { Banner } from '../src/componentes/banner/banner'
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../src/assets/logo.gif";
 
@@ -31,6 +33,7 @@ export const Home = () => {
           </Route>
 
           <Route path="/">
+            <Banner />
             <ItemListContainer />
           </Route>
         </Switch>

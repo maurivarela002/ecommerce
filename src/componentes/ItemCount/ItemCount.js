@@ -3,14 +3,16 @@ import "./itemCount.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const ItemCount = () => {
-    const [contador, setContador] = useState(0);
+    const [contador, setContador] = useState(1);
 
     const handleClick = (i) => {
-        const itemInicial = 0;
+        const itemInicial = 1;
         const limiteStock = 5;
+        
 
         setContador(contador);
         let newResult = itemInicial;
+        
         switch (i) {
             case "+":
                 newResult = contador + 1;
@@ -22,11 +24,12 @@ export const ItemCount = () => {
                 break;
         }
         setContador(newResult);
+        
         if (newResult > limiteStock) {
             setContador(contador);
         }
 
-        if (newResult < 0) {
+        if (newResult < 1) {
             setContador(contador);
         }
     };
