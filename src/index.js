@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './home';
 import reportWebVitals from './reportWebVitals';
-import {UserProvider} from '../src/context/userContext'
+import { UserProvider } from '../src/context/userContext'
+import { CartProvider } from '../src/context/cartContext'
 
 ReactDOM.render(
   <React.StrictMode>
+    <CartProvider>
     <UserProvider>
     <Home />
     </UserProvider>
+    </CartProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

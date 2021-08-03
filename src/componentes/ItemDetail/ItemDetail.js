@@ -8,6 +8,7 @@ import { Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ItemCount from "../ItemCount/ItemCount"
 
+
 export const ItemDetail = ({ nombreProductos, fotoProductos, precioProductos,idProdItem }) => {
   const [cart, setCart] = useState(<ItemCount />);
 
