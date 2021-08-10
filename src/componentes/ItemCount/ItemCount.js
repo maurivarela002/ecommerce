@@ -1,24 +1,17 @@
 import { React, useState, useContext } from "react";
 import "./itemCount.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { CartContext } from '../../context/cartContext'
 
-export const ItemCount = () => {
+export const ItemCount = (initial, limit) => {
     const [contador, setContador] = useState(1);
-    const setProducto = useContext(CartContext);
-
-    const onAdd = (quantity) => {
-        setContador(quantity);
-        setProducto(quantity);
-    }
 
     const onContador = (i) => {
-        const itemInicial = 1;
-        const limiteStock = 5;
-        
+        const itemInicial = initial
+        const limiteStock = limit
+
         setContador(contador);
         let newResult = itemInicial;
-        
+
         switch (i) {
             case "+":
                 newResult = contador + 1;
@@ -30,7 +23,7 @@ export const ItemCount = () => {
                 break;
         }
         setContador(newResult);
-        
+
         if (newResult > limiteStock) {
             setContador(contador);
         }
@@ -39,13 +32,12 @@ export const ItemCount = () => {
             setContador(contador);
         }
     };
-
     return (
         <div className="containerItemCount">
             <div className="btn">
                 <button onClick={() => onContador("+")} type="button" class="btn btn-dark">Add to Cart</button>
             </div>
-            
+
             <div className="inputContador">
                 {contador}
             </div>
@@ -56,8 +48,8 @@ export const ItemCount = () => {
                 </button>
             </div>
             <div className="btn-comprar">
-                <button onClick={() => onAdd(contador)} type="button" class="btn btn-dark">
-                    Comprar
+                <button type="button" class="btn btn-dark" onAdd={contador}>
+                    Agregar al carrito
                 </button>
             </div>
         </div>
