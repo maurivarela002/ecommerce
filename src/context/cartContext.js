@@ -1,51 +1,41 @@
-import { createContext, useState, useContext } from "react";
-export const CartContext = createContext();
+import { createContext, useState, useContext } from 'react'
+export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
+	const [productos, setProductos] = useState([])
 
-  const [producto, setProdcuto] = useState([]);
-  console.log("Producto Context: " + producto);
+	const isInCart = (id) => {
+		return productos.some((obj) => obj.item.id === id)
+	}
 
-  const isInCart = id => {
-    return producto.some((obj) => obj.item.id === id )
-  }
+	const addItem = (item, quantity) => {
+		debugger
+		if (isInCart(item.id)) {
+			let productoIndex = productos.findIndex((obj) => obj.item.id === item.id)
+			let newCart = [...productos]
+			newCart[productoIndex].quantity += quantity
+			setProductos(newCart)
+		} else setProductos([...productos, { item, quantity }])
+	}
 
-  const addItem = (item, quantity) => {
-    if(producto.length > 0){
-      if(isInCart(item.id)){
-        let posCart = producto.findIndex(obj => obj.item.id === item.id)
-        let newCart = producto
-        newCart[posCart].quantity += quantity;
-        setProdcuto(newCart);
-      }else setProdcuto( [...producto, {item, quantity}] );
-    }
-    else setProdcuto([{item,quantity}]);
-  }
+	const removeItem = (id) => {
+		setProductos(productos.filter((obj) => obj.item.id !== id))
+	}
 
-  const removeItem = (id) =>{
-    setProdcuto(producto.filter( obj => obj.item.id !== id ) )
-  }
+	const clear = () => {
+		setProductos([])
+	}
 
-  const clear = () =>{
-    setProdcuto([])
-  }
-
-  return (
-    <CartContext.Provider value={{setProdcuto, addItem, removeItem, clear}}>
-      {children}
-    </CartContext.Provider>
-  );
-};
+	return (
+		<CartContext.Provider value={{ productos, addItem, removeItem, clear }}>
+			{children}
+		</CartContext.Provider>
+	)
+}
 
 export const useCartContext = () => {
-  const context = useContext(CartContext);
+	const context = useContext(CartContext)
 
-  if (!context) throw new Error('useCartContext error');
-  return context;
-};
-// producto = [
-//   {
-//     item: {id, nombre, foto, precio},
-//     quantity: 1
-//   }
-// ]
+	if (!context) throw new Error('useCartContext error')
+	return context
+}
