@@ -1,21 +1,42 @@
-import { React } from 'react'
-import { useCartContext } from '../../context/cartContext'
+import { React } from "react";
+import "./cart.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useCartContext } from "../../context/cartContext";
 
 export const Cart = () => {
-	const { productos, removeItem, clear } = useCartContext()
+	const { productos, removeItem, clear } = useCartContext();
 
 	return (
-		<div>
+		<div className="divCart">
 			{productos.map((obj) => (
 				<div>
-					<p>Nombre: {obj.item.nombreProductos}</p>
-					<p>Foto: {obj.item.fotoProductos}</p>
-					<p>Precio: {obj.item.precioProductos}</p>
-
-					<button onClick={() => removeItem(obj.item.id)}>Borrar Item</button>
+					<img
+						className="imgProducto"
+						src={obj.item.fotoProductos}
+					/>
+					<h5 class="card-title">
+						{obj.item.nombreProductos}
+					</h5>
+					<p class="card-text">${obj.item.precioProductos}</p>
+					<button
+						type="button"
+						className="btn"
+						class="btn btn-light"
+						onClick={() => removeItem(obj.item.id)}
+					>
+						Borrar Item
+					</button>
 				</div>
 			))}
-			<button onClick={() => clear()}> Limpiar carro</button>
+			<button
+				type="button"
+				className="btn"
+				class="btn btn-light"
+				onClick={() => clear()}
+			>
+				{" "}
+				Limpiar carro
+			</button>
 		</div>
-	)
-}
+	);
+};
