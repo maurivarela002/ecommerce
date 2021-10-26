@@ -10,3 +10,8 @@
     width: 6vh;
     height: 6vh;
 }
+.productosQ{
+    text-align: right;
+    display: inline-block;
+    margin-inline: 10px;
+}

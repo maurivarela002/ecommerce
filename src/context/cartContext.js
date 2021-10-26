@@ -5,21 +5,25 @@ export const CartProvider = ({ children }) => {
 	const [productos, setProductos] = useState([])
 
 	const isInCart = (id) => {
-		return productos.some((obj) => obj.item.id === id)
+		return productos.some((product) => product.id === id)
 	}
 
 	const addItem = (item, quantity) => {
-		debugger
+		console.log('addItem() exec', item, quantity)
 		if (isInCart(item.id)) {
-			let productoIndex = productos.findIndex((obj) => obj.item.id === item.id)
+			console.log('isInCart')
+			let productoIndex = productos.findIndex((product) => product.id === item.id)
 			let newCart = [...productos]
-			newCart[productoIndex].quantity += quantity
+			newCart[productoIndex].quantity = quantity
 			setProductos(newCart)
-		} else setProductos([...productos, { item, quantity }])
+		} else {
+			console.log('else')
+			setProductos([...productos, { ...item, quantity }])
+		}
 	}
 
 	const removeItem = (id) => {
-		setProductos(productos.filter((obj) => obj.item.id !== id))
+		setProductos(productos.filter((product) => product.id !== id))
 	}
 
 	const clear = () => {

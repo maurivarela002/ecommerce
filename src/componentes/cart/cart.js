@@ -8,21 +8,21 @@ export const Cart = () => {
 
 	return (
 		<div className="divCart">
-			{productos.map((obj) => (
-				<div>
+			{productos.map((product) => (
+				<div key={product.id}>
 					<img
 						className="imgProducto"
-						src={obj.item.fotoProductos}
+						src={product.fotoProductos}
 					/>
 					<h5 class="card-title">
-						{obj.item.nombreProductos}
+						{product.nombreProductos} ({product.quantity})
 					</h5>
-					<p class="card-text">${obj.item.precioProductos}</p>
+					<p class="card-text">${product.precioProductos * product.quantity}</p>
 					<button
 						type="button"
 						className="btn"
 						class="btn btn-light"
-						onClick={() => removeItem(obj.item.id)}
+						onClick={() => removeItem(product.id)}
 					>
 						Borrar Item
 					</button>

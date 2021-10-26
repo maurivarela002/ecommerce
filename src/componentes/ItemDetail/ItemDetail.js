@@ -16,12 +16,11 @@ export const ItemDetail = ({
 	const { addItem } = useCartContext()
 
 	const handleItem = (quantity) => {
-		debugger
 		const producto = {
 			nombreProductos,
 			fotoProductos,
 			precioProductos,
-			idProdItem,
+			id: idProdItem
 		}
 
 		addItem(producto, quantity)

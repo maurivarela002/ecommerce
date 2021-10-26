@@ -5,7 +5,7 @@ import { Item } from "../Item/Item";
 
 
 export const ItemList = ({ productos, id }) => {
-    console.log(productos)
+    console.log(productos, id)
     return (
         <div>
         {productos.map((productosIndividual) => !id || id === productosIndividual.categoriaId ? <Item categoriaProductos={productosIndividual.categoriaId} idProdItem={productosIndividual.id} nombreProductos={productosIndividual.Nombre} fotoProductos={productosIndividual.foto} /> : <div />)}

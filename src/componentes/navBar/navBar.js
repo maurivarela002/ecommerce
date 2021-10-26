@@ -5,7 +5,7 @@ import {
 import '../navBar/navBar.css'
 import { Navbar } from 'react-bootstrap';
 
-export const NavBar = ({ logo, Guantes, Botines, Camisetas, Carrito }) => {
+export const NavBar = ({ logo, Guantes, Botines, Camisetas, Carrito, Quantity }) => {
 
   return (
     <div className="navbar-header">
@@ -27,7 +27,10 @@ export const NavBar = ({ logo, Guantes, Botines, Camisetas, Carrito }) => {
         </Navbar.Brand>
 
         <Navbar.Brand >
-          <Link className="productos" to='/Cart'>{Carrito}</Link>
+        <Link to="/Cart">
+          <img src={Carrito} className="productos cartImg" />
+          <p className="productosQ">{Quantity}</p>
+        </Link>
         </Navbar.Brand>
       </Navbar>
     </div>
